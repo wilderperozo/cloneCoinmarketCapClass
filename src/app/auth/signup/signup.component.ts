@@ -32,7 +32,6 @@ export class SignupComponent implements OnInit {
   }
 
   submit(){
-    console.log('Envio formulario')
   }
 
 
