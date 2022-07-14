@@ -36,6 +36,7 @@ export class SignupComponent implements OnInit {
 
 
   validateEmail(){
+    //aqui ira una funcionalidad
   }
 
 }
