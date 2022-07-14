@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ValidateEmailService} from "./service/validate-email.service";
+import {debounceTime, distinctUntilChanged} from "rxjs";
 
 @Component({
   selector: 'app-signup',
@@ -10,6 +11,7 @@ import {ValidateEmailService} from "./service/validate-email.service";
 })
 export class SignupComponent implements OnInit {
 
+  public validateEmailMessage = '';
   public email = new FormControl('', [Validators.email, Validators.required])
   public name = new FormControl('');
   public lastName = new FormControl('');
@@ -37,6 +39,20 @@ export class SignupComponent implements OnInit {
 
 
   validateEmail(){
+    this.email.valueChanges.pipe(
+      debounceTime(500),
+      distinctUntilChanged())
+      .subscribe(data => {
+        if(data){
+          this.validateEmailService.validateEmail(data)
+            .subscribe(() => {
+            this.validateEmailMessage = '';
+            },
+            (err) => {
+              this.validateEmailMessage = 'Este email ya esta en uso, por favor ingresar uno diferente'
+          })
+        }
+    })
   }
 
 }

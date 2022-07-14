@@ -8,3 +8,13 @@
 .full{
   width: 100%;
 }
+
+
+.form-control-invalid{
+  border-color: #dc3545;
+  box-shadow: 0 0 0 0.25rem rgba(245, 71, 123, 0.25);
+  &:focus{
+    border-color: #ff0920;
+    box-shadow: 0 0 0 0.25rem rgba(255, 28, 28, 0.25);
+  }
+}
