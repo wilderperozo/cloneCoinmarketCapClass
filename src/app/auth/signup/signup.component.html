@@ -1,0 +1,51 @@
+<form class="container mt-5" [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="row m-4">
+    <div class="col-sm-12 d-flex justify-content-center">
+      <img src="https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=d75d917" alt="Logo de la pagina">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" formControlName="email" placeholder="Registre su email">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="name" class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" formControlName="name" placeholder="Ingrese su nombre para registro">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="lastName" class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="lastName" formControlName="lastName" placeholder="Ingrese su apellido para registro">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="password" class="col-sm-2 col-form-label">Contraseña</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="password" formControlName="password" placeholder="Ingrese una contraseña segura">
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="confirmPassword" class="col-sm-2 col-form-label">Confirmar Contraseña</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" placeholder="Repita contraseña para confirmar">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary full" type="submit" [disabled]="!form.valid">Registro!</button>
+    </div>
+  </div>
+
+
+</form>

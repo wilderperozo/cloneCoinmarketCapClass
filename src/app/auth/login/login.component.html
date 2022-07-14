@@ -1,0 +1,45 @@
+<div class="container">
+
+  <div class="row m-4">
+    <div class="col-sm-12 d-flex justify-content-center">
+      <img src="https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=d75d917" alt="Logo de la pagina">
+    </div>
+  </div>
+
+  <div class="row" *ngIf="errorMessage">
+    <div class="alert alert-danger" role="alert">
+      {{errorMessage}}
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label for="email" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="email" name="email" placeholder="Ingrese email" [(ngModel)]="email"
+      [ngClass]="{'form-control-invalid': !!errorMessage}" >
+    </div>
+
+    <div id="validationServerUsernameFeedback" class="invalid-feedback">
+      Please choose a username.
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label" >Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" [(ngModel)]="password" placeholder="Ingrese contraseña">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <button class="btn btn-primary full" (click)="send()">Inicio de sesion</button>
+    </div>
+  </div>
+
+
+</div>
+
+
+
+
+<notifier-container></notifier-container>
