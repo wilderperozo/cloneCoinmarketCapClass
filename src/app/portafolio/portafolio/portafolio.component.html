@@ -1,11 +1,12 @@
 <p>portafolio works!</p>
-<button type="button" class="btn btn-primary btn-lg">Select coin</button>
-<ng-template>
+<button type="button" class="btn btn-primary btn-lg" (click)="modal.open(contain)">Select coin</button>
+<ng-template #contain>
   <div class="modal-header">
     <h4>Select Coin</h4>
     <button class="close" aria.label="close" type="button" (click)="modal.dismiss()">
       <span aria-hidden="true">&times;</span>
     </button>
+
 
   </div>
   <div class="modal-body">

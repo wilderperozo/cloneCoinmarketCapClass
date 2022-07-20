@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
-import { PortafolioModule } from './portafolio/portafolio.module';
+
+import { RestService } from './services/rest.service'
 
 @NgModule({
   declarations: [
@@ -14,8 +15,8 @@ import { PortafolioModule } from './portafolio/portafolio.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    PortafolioModule,
   ],
+  providers: [RestService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
