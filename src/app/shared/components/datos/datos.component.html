@@ -1,0 +1,48 @@
+<p>datos works!</p>
+
+
+
+
+
+<div class="row">
+    <div class="col">
+
+        <span class="name"> aaaa </span>
+
+        {{aleatorio}}  <!--  se manda valor aleatorio  -->>
+
+        {{ datos }}  <!--  se manda objeto datos -->>
+        
+
+        <span class="name"> bb </span>
+
+        <ul *ngFor="let lauguage of languageArray">
+
+          <li>{{lauguage}}</li>
+        
+        </ul>
+
+
+    <ul>
+        <li *ngFor="let dato of datos"> 
+          {{ dato.descripcion }} {{ dato.valor }} 
+          <span class="badge"> eeee </span>
+          <span class="name"> aaaa </span>
+        </li>
+      </ul>
+
+
+
+      <div *ngFor="let j of datos">
+        <div>
+              {{j.descripcion}}
+              {{j.valor}}
+        </div>
+      </div>
+
+
+
+
+
+    </div>
+  </div>

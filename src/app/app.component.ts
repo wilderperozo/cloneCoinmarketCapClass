@@ -8,5 +8,16 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'cloneCoinMarketCap';
 
+
+
+  isCollapse = false;   // guardamos el valor
+  toggleState() { // manejador del evento
+      let foo = this.isCollapse;
+      this.isCollapse = foo === false ? true : false; 
+  }
+
+
+
+
   constructor() {}
 }
