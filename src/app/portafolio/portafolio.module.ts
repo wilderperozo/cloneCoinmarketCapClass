@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PortafolioComponent } from './portafolio/portafolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../shared/user.service';
+import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 const routes: Routes = [
@@ -18,7 +19,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbPaginationModule,
+    NgbAlertModule
   ],
   exports: [RouterModule],
   providers: [UserService]
