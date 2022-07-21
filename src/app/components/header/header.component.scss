@@ -1,0 +1,19 @@
+.container-header {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+
+.top-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-link {
+    color: black;
+}
+
+.navbar-toggler {
+    background-color: black;
+}
