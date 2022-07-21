@@ -8,11 +8,9 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 })
 export class PortafolioComponent implements OnInit {
 
-/*   constructor(
-    private modal:NgbModal,
-  ) { }
-*/
   ngOnInit(): void {
+    this.getTypeOfCoins()
+
   }
 
   closeResult = '';
@@ -35,6 +33,11 @@ export class PortafolioComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  public getTypeOfCoins(){
+    this.
+
   }
 
 }
