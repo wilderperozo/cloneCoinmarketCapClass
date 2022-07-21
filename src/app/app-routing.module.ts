@@ -1,15 +1,13 @@
-import { DatosComponent } from './shared/components/datos/datos.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)},
-  {path: 'datos', component: DatosComponent}
+  { path: '', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  declarations: [DatosComponent]
+  exports: [RouterModule]
+
 })
 export class AppRoutingModule { }
