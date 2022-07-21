@@ -1,0 +1,53 @@
+<div class="table-content">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">1h %</th>
+            <th scope="col">24h %</th>
+            <th scope="col">7d %</th>
+            <th scope="col">Market Cap</th>
+            <th scope="col">Volume(24h)</th>
+            <th scope="col">Circulating Supply</th>
+            <th scope="col">Last 7 Days</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of listaCoins ">
+            <th>{{items.market_cap_rank}}</th>
+            <th>
+                <div class="d-flex justify-content-start">
+                    <img height="24" width="24" src="{{items.image}}" alt="">
+                    <span class="name-coin">{{items.name}}</span>
+                    <p class="name-abrev">{{items.symbol | uppercase}}</p>
+                </div>
+            </th>
+            <td class="td-money"><span><b>{{items.current_price | currency: 'USD'}}</b></span></td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td class="td-money"><span><b>{{items.market_cap | currency: 'USD'}}</b></span></td>
+            <td class="td-money"><span><b>{{items.total_volume | currency: 'USD'}}</b></span></td>
+            <td class="td-money"><span><b>{{items.circulating_supply | currency: 'USD'}}</b></span></td>
+            <td>
+                <a href="#"><img width="164" height="48" src="https://s3.coinmarketcap.com/generated/sparklines/web/7d/2781/1.svg" alt=""></a>
+            </td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dddd" data-bs-toggle="dropdown" aria-expanded="true">
+                      ...
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dddd">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+</div>

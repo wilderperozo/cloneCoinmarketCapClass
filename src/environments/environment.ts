@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  API_URI: 'http://localhost:3000'
+  API_URI: 'http://localhost:3000',
+  URI_COINS_LS: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc'
+
 };
 
 /*
