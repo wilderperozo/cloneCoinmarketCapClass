@@ -1,3 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+.modal-header{
+  display:flex;
+  width:90%;
+  margin-left: 5%;
+  border:0;
+}
 .btn{
   margin:2%;
+}
+.imageCoins {
+ width:24px;
+ border-radius: 12px;
+}
+.modal-title{
+  font-family: 'Rubik', sans-serif;
+}
+.modal-body{
+  display: flex;
+}
+.search{
+  width: 23px;
+}
+.containerCoins{
+  width:95%;
+}
+.oneCoin{
+  text-decoration: none;
+  display: flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family: 'Rubik', sans-serif;
+  width:95%;
+  padding:1% 0%;
+}
+.oneCoin div {
+  display: flex;
+  justify-content:space-around;
+  align-items:center;
+}
+.oneCoin div p{
+  padding: 0 4px;
+  margin: 4px;
+}
+.input-group-text{
+ background-color: white;
+ border:none;
+}
+.form-control{
+  border:none;
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(231, 231, 231, 0.25);
+}
+.input-group {
+  border: 3px solid #ced4da;
+  width:80%;
+  margin:0 10%;
+  border-radius: 10px;
+}
+.input-group:hover{
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+  border: 2px solid rgb(13 110 253 / 25%);
+}
+.lettherGray{
+  color:gray;
 }

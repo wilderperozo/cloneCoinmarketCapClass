@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs';
+import { CoinsService } from 'src/app/shared/coins.service';
 
 @Component({
   selector: 'app-portafolio',
@@ -7,15 +9,21 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./portafolio.component.scss']
 })
 export class PortafolioComponent implements OnInit {
+  public listcoins:any = [];
+  public listcoinsFirstTen:any = [];
+  listFiltered:any = [];
+  public searchTerm$= new Subject<any>();
 
   ngOnInit(): void {
-    this.getTypeOfCoins()
+    this.getTypeOfCoins();
+
+    this.filterList();
 
   }
 
   closeResult = '';
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private coinService:CoinsService) {}
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -36,8 +44,25 @@ export class PortafolioComponent implements OnInit {
   }
 
   public getTypeOfCoins(){
-    this.
+   this.coinService.getCoins()
+   .subscribe({
+    next: data => {
+    console.log(data);
+    this.listcoins=data;
+    this.listFiltered=this.listcoins;
+    },
+    error: error => {
+      console.log(JSON.stringify(error.error.message));
+    }
+  })
+  }
 
+  filterList(): void {
+    this.searchTerm$.subscribe(term => {
+      console.log(term.value);
+       this.listFiltered = this.listcoins
+        .filter((item:any) => item.name.toLowerCase().indexOf(term.value.toLowerCase()) >= 0).slice(0,10);
+    });
   }
 
 }
