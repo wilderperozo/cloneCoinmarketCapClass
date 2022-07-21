@@ -5,13 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 
-import { DatosService } from './shared/datos.service';
-
-import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent  
   ],
   imports: [
     BrowserModule,
@@ -19,7 +16,6 @@ import { CommonModule } from '@angular/common';
     HttpClientModule
   ],
 
-  providers: [DatosService],
 
   bootstrap: [AppComponent]
 })
