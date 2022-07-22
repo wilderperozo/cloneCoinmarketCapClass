@@ -16,9 +16,7 @@ export class PortafolioComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTypeOfCoins();
-
     this.filterList();
-
   }
 
   closeResult = '';
@@ -63,6 +61,15 @@ export class PortafolioComponent implements OnInit {
        this.listFiltered = this.listcoins
         .filter((item:any) => item.name.toLowerCase().indexOf(term.value.toLowerCase()) >= 0).slice(0,10);
     });
+  }
+
+  addTransaction(contentTransaction:any){
+   console.log("añadir transaccion");
+   this.modalService.open(contentTransaction, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.closeResult = `Closed with: ${result}`;
+  }, (reason) => {
+    this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+  });
   }
 
 }

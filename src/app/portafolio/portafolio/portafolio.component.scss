@@ -5,9 +5,7 @@
   margin-left: 5%;
   border:0;
 }
-.btn{
-  margin:2%;
-}
+.btn{margin:2%;}
 .imageCoins {
  width:24px;
  border-radius: 12px;
@@ -15,12 +13,8 @@
 .modal-title{
   font-family: 'Rubik', sans-serif;
 }
-.modal-body{
-  display: flex;
-}
-.search{
-  width: 23px;
-}
+.modal-body{display: flex;}
+.search{width: 23px;}
 .containerCoins{
   width:95%;
 }
@@ -64,4 +58,17 @@
 }
 .lettherGray{
   color:gray;
+}
+.content-open{
+  margin:0 10px;
+  width:30%;
+}
+.content-open div{
+  width:100%;
+}
+.content-open div span{
+background-color: #ced4da;
+}
+.content-open div input{
+  background-color: #ced4da;
 }
