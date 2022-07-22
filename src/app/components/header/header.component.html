@@ -40,5 +40,50 @@
                 </ul>
             </div>
         </nav>
+
+
+
+        <nav class="navbar navbar-expand-md navbar-dark bg-white">
+            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <img src="assets/images/logo-tajamar.svg" id="tajamar">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> {{'Home.Menu.Cripto' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> {{'Home.Menu.Tipo' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> {{'Home.Menu.Com' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> {{'Home.Menu.Prod' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"> {{'Home.Menu.Hacer' | translate }}</a>
+                    </li>
+                </ul>
+            </div>
+        
+            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button type="button"  (click)="cambiarIdioma('es')"> ES </button>
+                        <img src="assets/images/espana.svg" (click)="cambiarIdioma('es')">
+                    </li>
+                    <li class="nav-item">
+                        <button type="button" (click)="cambiarIdioma('en')"> EN </button>
+                        <img src="assets/images/bandera.svg" (click)="cambiarIdioma('en')">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+
+
+
     </section>
 </header>
