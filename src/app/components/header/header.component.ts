@@ -3,6 +3,9 @@ import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { DatosService } from 'src/app/shared/datos.service';
 
+////////////// para cambio de idiona 
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -15,8 +18,10 @@ export class HeaderComponent implements OnInit {
   public hideHeader: boolean = false;
   public hiddenRoutes = ['/login', '/signup'];
 
+  ////////////para el menu idioma
+  public mensaje: string="";
 
-  constructor(private datosService: DatosService, private router: Router) {    /// inyeccion dels ervicio
+  constructor(private datosService: DatosService, public translate: TranslateService, private router: Router) {    /// inyeccion dels ervicio  // cambio de idioma
     this.datos = datosService.getDatos();                // alamcen en la variable de isnatncia  los datos recuperados del swervicio
     this.aleatorio = datosService.setAleatorio(10000, 25000);
   }
@@ -38,4 +43,10 @@ export class HeaderComponent implements OnInit {
     this.isCollapse = foo === false ? true : false;
   }
 
+  // funcion cambair idioma
+  cambiarIdioma(idioma: string) {
+    this.translate.use(idioma);
+    console.log("Cambia pe") + idioma.charAt(1);
+    //this.translate.get('Home.RealizadoPor').subscribe(data => this.mensaje = data + ' Iván Sánchez Victoria')
+  }
 }
