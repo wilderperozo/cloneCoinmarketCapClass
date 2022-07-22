@@ -1,19 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
 @import "angular-notifier/styles/core.css";
 @import "angular-notifier/styles/themes/theme-material.css";
 @import "angular-notifier/styles/types/type-error.css";
 @import "angular-notifier/styles/types/type-success.css";
 
-.full{
+.full {
   width: 100%;
 }
 
 
-.form-control-invalid{
+.form-control-invalid {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(245, 71, 123, 0.25);
-  &:focus{
+
+  &:focus {
     border-color: #ff0920;
     box-shadow: 0 0 0 0.25rem rgba(255, 28, 28, 0.25);
   }

@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from './components/header/header.component';
 
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
@@ -20,7 +22,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -28,7 +29,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
         deps: [HttpClient]
       }
     })
-
   ],
   providers: [],
   bootstrap: [AppComponent]

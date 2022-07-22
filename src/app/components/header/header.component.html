@@ -1,48 +1,61 @@
-<header class="container-header">
-    <section class="top-container">
-        <div *ngFor="let dato of datos">
-            <div>
-                {{ dato.descripcion }}: {{ dato.valor }}%
+<ng-template [ngIf]="!hideHeader">
+    <header class="container-header">
+        <section class="top-container">
+            <div class="container-cripto" *ngFor="let dato of datos">
+                <span class="description-cripto">{{ dato.descripcion }}: </span>
+                <span class="value-cripto">{{ dato.valor }}%</span>
             </div>
-        </div>
-        <button>English</button>
-        <button class="btn btn-primary" type="button">Log In</button>
-        <button class="btn btn-primary" type="button">Sign Up</button>
-    </section>
+            <select class="select" data-mdb-filter="true">
+                <option class="option" value="1">English</option>
+                <option class="option" value="2">Spanish</option>
+            </select>
+            <button class="btn btn-primary" type="button" routerLink="login">Log In</button>
+            <button class="btn btn-primary" type="button" routerLink="signup">Sign Up</button>
+        </section>
 
-    <section>
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-white">
-            <a class="navbar-brand" href="#">
+        <section class="container-navbar">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-white">
                 <img src="https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=d75d917"
                     alt="Logo de la pagina">
-            </a>
-            <button class="navbar-toggler collapsed" type="button" (click)="toggleState()">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="navbar-collapse" [ngClass]="{ 'collapse': isCollapse }">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Cryptocurrencies </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Exchanges </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Comunity </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Products </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> Learn </a>
-                    </li>
-                </ul>
+                <!-- <img src="./../../../assets/images/logo.png" alt="Logo de la pagina"> -->
+                <button class="navbar-toggler collapsed" type="button" (click)="toggleState()">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse" [ngClass]="{ 'collapse': isCollapse }">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Cryptocurrencies </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Exchanges </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Comunity </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Products </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Learn </a>
+                        </li>
+                    </ul>
+                    <div class="container-icons">
+                        <i class="bi bi-star-fill">
+                            <span class="text-icon">Watchlist</span>
+                        </i>
+                        <i class="bi bi-pie-chart-fill">
+                            <span class="text-icon">Portfolio</span>
+                        </i>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-search">
+                <input type="search" id="form1" class="form-control" placeholder="Search" />
             </div>
-        </nav>
-
-
-
+        </section>
+    </header>
+</ng-template>
+     
         <nav class="navbar navbar-expand-md navbar-dark bg-white">
             <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
                 <ul class="navbar-nav mr-auto">
@@ -80,10 +93,6 @@
                 </ul>
             </div>
         </nav>
-
-
-
-
-
     </section>
 </header>
+
