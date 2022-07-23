@@ -1,19 +1,110 @@
 .container-header {
     display: flex;
     flex-direction: column;
-    margin: 5px;
 }
 
 .top-container {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    margin: 5px 0;
+    padding: 0 20px 10px 20px;
+    border-bottom: 1px solid rgb(183, 202, 209);
+}
+
+.container-cripto {
+    font-size: 12px;
+}
+
+.value-cripto {
+    color: rgb(47, 136, 252);
+}
+
+.select {
+    border: none;
+}
+
+.option {
+    border: 1px solid rgb(183, 202, 209);
+}
+
+.btn {
+    font-size: 14px;
+}
+
+.btn:hover {
+    background-color: white;
+    color: rgb(47, 136, 252);
+}
+
+.container-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 70px;
 }
 
 .nav-link {
     color: black;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .navbar-toggler {
     background-color: black;
+}
+
+.container-icons {
+    display: flex;
+    margin-left: 9rem;
+}
+
+.bi {
+    display: flex;
+    align-items: center;
+    color: rgb(131, 145, 151);
+    padding: 0 10px;
+}
+
+.text-icon {
+    font-size: 10px;
+    font-style: normal;
+    color: black;
+    padding-left: 4px;
+}
+
+.container-search {
+    background-image: url('../../../assets/images/lupa.png');
+    opacity: 0.4;
+    background-repeat: no-repeat;
+    background-position: 4px center;
+    background-size: 20px;
+    background-color: rgb(207, 204, 204);
+    display: flex;
+    align-items: center;
+    width: 200px;
+    padding-left: 28px;
+    height: 30px;
+    border: none;
+    border-radius: 6px;
+}
+
+.container-search input {
+    width: 80%;
+    height: 20px;
+    font-size: 0.9em;
+    border: none;
+    background-color: rgb(207, 204, 204);
+}
+
+.container-search input:focus {
+    outline: none;
+}
+
+/////// Medidas para TABLET///////
+@media (max-width: 768px) {
+    .container-header {
+        display: flex;
+        flex-direction: column-reverse;
+    }
 }
