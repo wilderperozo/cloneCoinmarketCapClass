@@ -7,11 +7,11 @@
             </div>
             <select class="select" data-mdb-filter="true" [ngModel]="selectedDevice | json"
                 (ngModelChange)="onChangeLanguage($event)">
-                <option class="option" value="1" [selected]="true">English</option>
+                <option class="option" value="1" >English</option>
                 <option class="option" value="2">Spanish</option>
             </select>
-            <button class="btn btn-primary" type="button" routerLink="login">Log In</button>
-            <button class="btn btn-primary" type="button" routerLink="signup">Sign Up</button>
+            <button class="btn btn-primary" type="button" routerLink="login"> {{'Home.Botones.LogIn' | translate }}    </button>
+            <button class="btn btn-primary" type="button" routerLink="signup"> {{'Home.Botones.SignUp' | translate }} </button>
         </section>
 
         <section class="container-navbar">
