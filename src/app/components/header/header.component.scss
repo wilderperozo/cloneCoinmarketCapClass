@@ -50,9 +50,7 @@
     font-weight: bold;
 }
 
-.navbar-toggler {
-    background-color: black;
-}
+
 
 .container-icons {
     display: flex;
@@ -106,5 +104,54 @@
     .container-header {
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    .container-icons {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        line-height: 35px;
+    }
+
+    .text-icon {
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .bi {
+        padding: 0;
+    }
+
+    .container-search {
+        width: 10%;
+        background-image: url('../../../assets/images/lupa.png');
+        background-color: transparent;
+        margin: 15px 0 0 0;
+        opacity: 1;
+    }
+
+    .container-search input {
+        display: none;
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    #icon-navbar {
+        color: black;
+        font-size: 35px;
+    }
+
+    .container-navbar {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        padding: 0 0 0 40px;
+    }
+
+    .btn,
+    .select {
+        display: none;
     }
 }

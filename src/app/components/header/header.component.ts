@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { DatosService } from 'src/app/shared/datos.service';
 
@@ -17,9 +17,7 @@ export class HeaderComponent implements OnInit {
   public aleatorio = 0;
   public hideHeader: boolean = false;
   public hiddenRoutes = ['/login', '/signup'];
-
-  ////////////para el menu idioma
-  public mensaje: string="";
+  public selectedDevice = 1;
 
   constructor(private datosService: DatosService, public translate: TranslateService, private router: Router) {    /// inyeccion dels ervicio  // cambio de idioma
     this.datos = datosService.getDatos();                // alamcen en la variable de isnatncia  los datos recuperados del swervicio
@@ -43,10 +41,13 @@ export class HeaderComponent implements OnInit {
     this.isCollapse = foo === false ? true : false;
   }
 
-  // funcion cambair idioma
-  cambiarIdioma(idioma: string) {
-    this.translate.use(idioma);
-    console.log("Cambia pe") + idioma.charAt(1);
-    //this.translate.get('Home.RealizadoPor').subscribe(data => this.mensaje = data + ' Iván Sánchez Victoria')
+  onChangeLanguage(val: any) {
+    //console.log(val)
+    if (val == 1) {
+      this.translate.use('en');
+    }
+    if (val == 2) {
+      this.translate.use('es');
+    }
   }
 }
