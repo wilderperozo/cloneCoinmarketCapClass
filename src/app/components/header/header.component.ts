@@ -17,10 +17,7 @@ export class HeaderComponent implements OnInit {
   public aleatorio = 0;
   public hideHeader: boolean = false;
   public hiddenRoutes = ['/login', '/signup'];
-  public selectedDevice = ''
-
-  ////////////para el menu idioma
-  public mensaje: string = "";
+  public selectedDevice = 1;
 
   constructor(private datosService: DatosService, public translate: TranslateService, private router: Router) {    /// inyeccion dels ervicio  // cambio de idioma
     this.datos = datosService.getDatos();                // alamcen en la variable de isnatncia  los datos recuperados del swervicio
@@ -48,7 +45,8 @@ export class HeaderComponent implements OnInit {
     //console.log(val)
     if (val == 1) {
       this.translate.use('en');
-    } if (val == 2) {
+    }
+    if (val == 2) {
       this.translate.use('es');
     }
   }
