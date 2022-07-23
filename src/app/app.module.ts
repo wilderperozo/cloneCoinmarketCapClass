@@ -10,9 +10,8 @@ import { HeaderComponent } from './components/header/header.component';
 
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
 import { HttpClientModule, HttpClient } from "@angular/common/http";
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 @NgModule({
@@ -25,7 +24,6 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -33,7 +31,6 @@ import { HttpClientModule, HttpClient } from "@angular/common/http";
         deps: [HttpClient]
       }
     })
-
   ],
   providers: [],
   bootstrap: [AppComponent]

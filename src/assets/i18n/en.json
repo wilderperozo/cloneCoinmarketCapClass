@@ -6,11 +6,6 @@
             "Com": "Comunity",
             "Prod": "Products",
             "Hacer": "Learn"
-        },
-        "Botones": {
-            "LogIn": "LogIn",
-            "SignUp": "Sign Up"
-        }  
+        }    
     }
-
 }
