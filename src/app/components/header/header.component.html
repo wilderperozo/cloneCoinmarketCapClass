@@ -5,8 +5,9 @@
                 <span class="description-cripto">{{ dato.descripcion }}: </span>
                 <span class="value-cripto">{{ dato.valor }}%</span>
             </div>
-            <select class="select" data-mdb-filter="true">
-                <option class="option" value="1">English</option>
+            <select class="select" data-mdb-filter="true" [ngModel]="selectedDevice | json"
+                (ngModelChange)="onChangeLanguage($event)">
+                <option class="option" value="1" [selected]="true">English</option>
                 <option class="option" value="2">Spanish</option>
             </select>
             <button class="btn btn-primary" type="button" routerLink="login">Log In</button>
@@ -24,19 +25,19 @@
                 <div class="navbar-collapse" [ngClass]="{ 'collapse': isCollapse }">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> Cryptocurrencies </a>
+                            <a class="nav-link" href="#"> {{'Home.Menu.Cripto' | translate }} </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> Exchanges </a>
+                            <a class="nav-link" href="#"> {{'Home.Menu.Tipo' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> Comunity </a>
+                            <a class="nav-link" href="#"> {{'Home.Menu.Com' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> Products </a>
+                            <a class="nav-link" href="#"> {{'Home.Menu.Prod' | translate }}</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> Learn </a>
+                            <a class="nav-link" href="#"> {{'Home.Menu.Hacer' | translate }}</a>
                         </li>
                     </ul>
                     <div class="container-icons">
@@ -55,44 +56,3 @@
         </section>
     </header>
 </ng-template>
-     
-        <nav class="navbar navbar-expand-md navbar-dark bg-white">
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <img src="assets/images/logo-tajamar.svg" id="tajamar">
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> {{'Home.Menu.Cripto' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> {{'Home.Menu.Tipo' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> {{'Home.Menu.Com' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> {{'Home.Menu.Prod' | translate }}</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"> {{'Home.Menu.Hacer' | translate }}</a>
-                    </li>
-                </ul>
-            </div>
-        
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <button type="button"  (click)="cambiarIdioma('es')"> ES </button>
-                        <img src="assets/images/espana.svg" (click)="cambiarIdioma('es')">
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" (click)="cambiarIdioma('en')"> EN </button>
-                        <img src="assets/images/bandera.svg" (click)="cambiarIdioma('en')">
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </section>
-</header>
-
