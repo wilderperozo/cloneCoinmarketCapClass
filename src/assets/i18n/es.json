@@ -6,6 +6,10 @@
             "Com": "Comunidad",
             "Prod": "Productos",
             "Hacer": "Aprender"
+        },
+        "Botones": {
+            "LogIn": "Iniciar Sesion",
+            "SignUp": "Registrarse"
         }
     }
 }
