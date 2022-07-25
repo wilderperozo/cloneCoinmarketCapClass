@@ -43,7 +43,7 @@
 
   <div class="containerTransaction">
     <button type="button" class="btn btn-outline-secondary btn-block">Comprar</button>
-    <ng-select [(ngModel)]="chosenCoin" class="selectContainer" (keyup)="searchTerm$.next($event.target)" >
+    <ng-select [ngModel]="chosenCoin" (ngModelChange)="updateObjectCoin($event)" class="selectContainer" (keyup)="searchTerm$.next($event.target)" >
       <ng-option *ngFor="let coin of listFiltered" class="optioncontainer" >
         <div class="oneCoinSelect" (click)="chosenCoinObject=coin">
           <img style="width:24px; height:24px; border-radius: 10px;" src="{{coin.image}}">

@@ -87,6 +87,11 @@ export class PortafolioComponent implements OnInit {
     this.chosenCoinObject=coin;
   }
 
+  updateObjectCoin(newValue: any){
+    this.chosenCoinObject = newValue;
+    this.chosenCoin = newValue;
+  }
+
 
 
 
