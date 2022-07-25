@@ -88,6 +88,4 @@ export class PortafolioComponent implements OnInit {
   }
 
 
-
-
 }

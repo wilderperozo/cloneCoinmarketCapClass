@@ -152,7 +152,7 @@ ng-option div{
 }
 
 .totalSpent{
-  background-color: rgba(207, 220, 228, 0.973);
+  background-color: #EEF2F5;
   font-family: 'Rubik', sans-serif;
   width:80%;
   margin: 40px 0px 40px;
@@ -161,11 +161,12 @@ ng-option div{
   }
 .totalSpent input{
   border:0;
-  background-color: rgba(214, 221, 226, 0.973);
+  background-color: #EEF2F5;
   border-radius: 10px;
   font-size: 27px;
-
+  color:black;
 }
+
 .totalSpent input:focus{
   border:0;
   background-color: rgba(207, 220, 228, 0.973);
