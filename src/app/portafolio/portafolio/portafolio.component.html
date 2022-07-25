@@ -13,7 +13,7 @@
   <div class="modal-body">
     <div class="containerCoins">
       <ul>
-        <li class="oneCoin" *ngFor="let coin of listFiltered" (click)="addTransaction(contentTransaction)">
+        <li class="oneCoin" *ngFor="let coin of listFiltered" (click)="addTransaction(contentTransaction, coin)">
           <div>
             <img class="imageCoins" src="{{coin.image}}">
             <p>{{coin.name.charAt(0).toUpperCase()+coin.name.slice(1,coin.name.length)}}</p>
@@ -32,6 +32,8 @@
   </div>
 </div>
 
+<!-- Vista de modal para comprar -->
+
 <ng-template #contentTransaction let-modal>
   <div class="modal-header">
     <h4 class="modal-title" id="modal-basic-title">Add Transaction</h4>
@@ -39,37 +41,35 @@
     <br>
   </div>
 
-<!--   <div class="input-group mb-3">
-    <span class="input-group-text" id="basic-addon1"><img class="search" src="../../../assets/search.png"></span>
-    <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" (keyup)="searchTerm$.next($event.target)">
-  </div> -->
+  <div class="containerTransaction">
+    <button type="button" class="btn btn-outline-secondary btn-block">Comprar</button>
+    <ng-select [(ngModel)]="chosenCoin" class="selectContainer" (keyup)="searchTerm$.next($event.target)" >
+      <ng-option *ngFor="let coin of listFiltered" class="optioncontainer" >
+        <div class="oneCoinSelect" (click)="chosenCoinObject=coin">
+          <img style="width:24px; height:24px; border-radius: 10px;" src="{{coin.image}}">
+          <p style="padding:0 3px;">{{coin.name.charAt(0).toUpperCase()+coin.name.slice(1,coin.name.length)}}</p>
+          <p class="lettherGray">{{coin.symbol.toUpperCase()}}</p>
+        </div>
+      </ng-option>
+    </ng-select>
 
-  <div class="modal-body">
-    <div class="containerCoins">
-      <button>Comprar</button>
-      <!-- <ul>
-        <li class="oneCoin" *ngFor="let coin of listFiltered">
-          <div>
-            <img class="imageCoins" src="{{coin.image}}">
-            <p>{{coin.name.charAt(0).toUpperCase()+coin.name.slice(1,coin.name.length)}}</p>
-            <p class="lettherGray">{{coin.symbol.toUpperCase()}}</p>
-          </div>>
-        </li>
-      </ul> -->
-  </div>
-  <section>
+  <section class="cardQtyPrice">
      <div>
        <p>Quantity</p>
-       <input type="number">
+       <input type="number" placeholder="0.00" class="form-number">
      </div>
      <div>
        <p>Price Per Coin</p>
-       <input type="number">
+       <input type="number" class="form-number" value="{{chosenCoinObject.current_price}}">
      </div>
   </section>
-      <p>ToalSpent</p>
-      <input />
-  <button>Add transaction</button>
+
+  <section class="totalSpent">
+    <p>TotalSpent</p>
+    <input placeholder="$0"/>
+  </section>
+
+  <button type="button" class="btn btn-primary btn-lg btn-block" >Add transaction</button>
 
   </div>
 

@@ -5,7 +5,9 @@ import { PortafolioComponent } from './portafolio/portafolio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '../shared/user.service';
 import {NgbPaginationModule, NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
-
+import { CoinsService } from '../shared/coins.service';
+import { Placement as PopperPlacement, Options } from '@popperjs/core';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 const routes: Routes = [
   {path: '', component: PortafolioComponent, title: 'Login super chevere'},
@@ -21,9 +23,12 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     NgbPaginationModule,
-    NgbAlertModule
+    NgbAlertModule,
+    NgSelectModule,
+
+
   ],
   exports: [RouterModule],
-  providers: [UserService]
+  providers: [UserService, CoinsService]
 })
 export class PortafolioModule { }

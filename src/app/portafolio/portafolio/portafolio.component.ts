@@ -11,8 +11,10 @@ import { CoinsService } from 'src/app/shared/coins.service';
 export class PortafolioComponent implements OnInit {
   public listcoins:any = [];
   public listcoinsFirstTen:any = [];
-  listFiltered:any = [];
+  public listFiltered:any = [];
   public searchTerm$= new Subject<any>();
+  chosenCoin:any;
+  chosenCoinObject:any;
 
   ngOnInit(): void {
     this.getTypeOfCoins();
@@ -63,13 +65,29 @@ export class PortafolioComponent implements OnInit {
     });
   }
 
-  addTransaction(contentTransaction:any){
+  addTransaction(contentTransaction:any , coin:any){
    console.log("añadir transaccion");
    this.modalService.open(contentTransaction, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
     this.closeResult = `Closed with: ${result}`;
   }, (reason) => {
     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
   });
+  console.log(coin)
+  this.chosenCoinObject=coin;
+  this.chosenCoin= `
+      <div style="display:flex; width:80%;">
+        <img  style="width:24px; height:24px; border-radius: 10px;" src="${coin.image}">
+        <p style="font-family: 'Rubik', sans-serif;padding:0 3px;">${coin.name.charAt(0).toUpperCase()+coin.name.slice(1,coin.name.length)}</p>
+        <p class="lettherGray" style="font-family: 'Rubik', sans-serif; color:gray;">${coin.symbol.toUpperCase()}</p>
+      </div>
+  `
   }
+
+  addCoinNewPrice(coin:any){
+    this.chosenCoinObject=coin;
+  }
+
+
+
 
 }
