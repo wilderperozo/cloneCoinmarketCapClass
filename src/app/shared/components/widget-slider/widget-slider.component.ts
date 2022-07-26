@@ -20,7 +20,7 @@ export class WidgetSliderComponent implements OnInit {
   }
 
   redirectTo(url:string){
-    //window.open(url)
+    window.open(url)
   }
 
 }
