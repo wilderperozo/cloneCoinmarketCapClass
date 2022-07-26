@@ -1,0 +1,58 @@
+<ng-template [ngIf]="!hideHeader">
+    <header class="container-header">
+        <section class="top-container">
+            <div class="container-cripto" *ngFor="let dato of datos">
+                <span class="description-cripto">{{ dato.descripcion }}: </span>
+                <span class="value-cripto">{{ dato.valor }}%</span>
+            </div>
+            <select class="select" data-mdb-filter="true" [ngModel]="selectedDevice | json"
+                (ngModelChange)="onChangeLanguage($event)">
+                <option class="option" value="1" >English</option>
+                <option class="option" value="2">Spanish</option>
+            </select>
+            <button class="btn btn-primary" type="button" routerLink="login"> {{'Home.Botones.LogIn' | translate }}    </button>
+            <button class="btn btn-primary" type="button" routerLink="signup"> {{'Home.Botones.SignUp' | translate }} </button>
+        </section>
+
+        <section class="container-navbar">
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-white">
+                <img src="https://s2.coinmarketcap.com/static/cloud/img/coinmarketcap_1.svg?_=d75d917"
+                    alt="Logo de la pagina">
+                <!-- <img src="./../../../assets/images/logo.png" alt="Logo de la pagina"> -->
+                <button class="navbar-toggler collapsed bg-white" type="button" (click)="toggleState()">
+                    <i id="icon-navbar" class="bi bi-list"></i>
+                </button>
+                <div class="navbar-collapse" [ngClass]="{ 'collapse': isCollapse }">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> {{'Home.Menu.Cripto' | translate }} </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> {{'Home.Menu.Tipo' | translate }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> {{'Home.Menu.Com' | translate }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> {{'Home.Menu.Prod' | translate }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> {{'Home.Menu.Hacer' | translate }}</a>
+                        </li>
+                    </ul>
+                    <div class="container-icons">
+                        <i class="bi bi-star-fill">
+                            <span class="text-icon">Watchlist</span>
+                        </i>
+                        <i class="bi bi-pie-chart-fill">
+                            <span class="text-icon">Portfolio</span>
+                        </i>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-search">
+                <input type="search" id="form1" class="form-control" placeholder="Search" />
+            </div>
+        </section>
+    </header>
+</ng-template>
