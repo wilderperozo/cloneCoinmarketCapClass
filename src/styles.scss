@@ -9,7 +9,9 @@
   width: 100%;
 }
 
-
+body{
+  font-family: 'Inter', sans-serif;
+}
 .form-control-invalid{
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(245, 71, 123, 0.25);

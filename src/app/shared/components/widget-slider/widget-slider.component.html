@@ -1,0 +1,146 @@
+<div
+  id="carouselExampleCaptions"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      *ngFor="let item of totalSlider; let i = index"
+      type="button"
+      data-bs-target="#carouselExampleCaptions"
+      [class.active]="i === 0"
+      aria-current="true"
+      data-bs-slide-to="i"
+    ></button>
+  </div>
+
+  <div class="carousel-inner">
+    <div
+      class="carousel-item"
+      *ngFor="let slide of dataWidgetSlider?.contentsTopCommunity; let i = index"
+      [class.active]="i === 0"
+    >
+      <div class="carousel-caption d-none d-md-block">
+        <div class="row carousel-caption__title">
+          <div class="col-md-1">
+            <span class="title">⭐️</span>
+          </div>
+          <div class="col-md-8 d-flex justify-content-start">
+            <span class="title">{{ slide.titleTop }}</span>
+          </div>
+          <div class="col-md-3 d-flex justify-content-end">
+            <span class="link">More <i class="fa fa-chevron-right"></i></span>
+          </div>
+        </div>
+
+        <div class="row carousel-caption__item" *ngFor="let list of slide.list">
+          <div class="col-md-1">
+            <img [src]="list.image" alt="" class="img-xs" />
+          </div>
+          <div
+            class="col-md-8 d-flex justify-content-start"
+            (click)="redirectTo(list.redirectTo)"
+          >
+            <p class="text-list-item">
+              {{ list.accountName }}
+              <img
+                src="	https://s2.coinmarketcap.com/static/cloud/img/icon/certified.svg?_=e293f78"
+              />
+              <span>{{ list.accountFollow }}</span>
+            </p>
+          </div>
+          <div class="col-md-3">
+            <button type="button" class="btn btn-light">+ Follow</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div
+        class="carousel-caption d-none d-md-block"
+        *ngFor="let slidePost of dataWidgetSlider?.contentsTopPost"
+      >
+        <div class="row carousel-caption__title">
+          <div class="col-md-1">
+            <span class="title">⭐️</span>
+          </div>
+          <div class="col-md-8 d-flex justify-content-start">
+            <span class="title">{{ slidePost.titleTop }}</span>
+          </div>
+          <div class="col-md-3 d-flex justify-content-end">
+            <span class="link">More <i class="fa fa-chevron-right"></i></span>
+          </div>
+        </div>
+
+        <div class="row carousel-caption__item">
+          <div class="col-md-1">
+            <img [src]="slidePost.imagePost" class="img-md" />
+          </div>
+          <div class="col-md-11 d-flex justify-content-start">
+            <p class="text-list-item">
+              {{ slidePost.accountName }}
+              <img
+                src="	https://s2.coinmarketcap.com/static/cloud/img/icon/certified.svg?_=e293f78"
+              />
+              <span>{{ slidePost.accountFollow }}</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="row carousel-caption__post">
+          <div class="col-md-12">
+            <p class="row">{{ slidePost.text1 }}</p>
+            <p class="row">{{ slidePost.text2 }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+      <div
+        class="carousel-caption d-none d-md-block"
+        *ngFor="let slideArticle of dataWidgetSlider?.contentsTopAriticle"
+      >
+        <div class="row carousel-caption__title">
+          <div class="col-md-1">
+            <span class="title">⭐️</span>
+          </div>
+          <div class="col-md-8 d-flex justify-content-start">
+            <span class="title">{{ slideArticle.titleTop }}</span>
+          </div>
+          <div class="col-md-3 d-flex justify-content-end">
+            <span class="link">More <i class="fa fa-chevron-right"></i></span>
+          </div>
+        </div>
+
+        <div class="row carousel-caption__item">
+          <div class="col-md-4">
+            <img [src]="slideArticle.imageArticle" class="img-lg" />
+          </div>
+          <div class="col-md-8 text-dark p-2">
+             <div class="row">
+              <p class="text-list-item ft-2 d-flex justify-content-start">
+                <img [src]="slideArticle.imageAvatar" />
+                {{ slideArticle.accountName }}
+              </p>
+             </div>
+             <div class="row text-left">
+               <p>{{ slideArticle.text }}</p>
+             </div>
+             <div class="row text-left">
+              <p class="social">
+                <span>{{ slideArticle.date }}</span>
+                <i class="fa fa-eye"></i>
+                <span>{{ slideArticle.totalViews }}</span>
+                <i class="fa fa-heart"></i>
+                <span>{{ slideArticle.totalLikes }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

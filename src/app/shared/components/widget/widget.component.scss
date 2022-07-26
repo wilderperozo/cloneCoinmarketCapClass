@@ -1,0 +1,64 @@
+@use '../../../shared/styles/colors.scss';
+
+.card_widget{
+    padding: 16px;
+    box-shadow:colors.$box-shadow-color;
+    border-radius: 8px;
+    &__title{
+        height: 26px;
+        margin-bottom: 16px;
+            img{
+                width:20px;
+                height: 20px;
+                margin-right: 10px;
+            }
+            span{
+                font-weight:bold;
+                &.title{
+                    font-size: 16px;
+                    color:colors.$primary-color-dark;
+                }
+                &.link{
+                    cursor: pointer;
+                    color:colors.$link-color;
+                    font-size: 12px;
+                }
+            }
+    }
+
+    &__item{
+        span{
+            font-size: 12px;
+            &.alias{
+                color:colors.$color-light-neutral;
+                font-weight:400;
+            }
+            &.down-color{
+                color:colors.$down-color;
+            }
+            &.up-color{
+                color:colors.$up-color;
+            }
+            &.price-color{
+                font-weight: 600;
+                color:colors.$primary-color-dark;
+            }
+        }
+        p{
+            font-size: 12px;
+            &.name{
+                font-weight: 600;
+                margin-left: 8px;
+            }
+            &.rank{
+                color:colors.$color-light-neutral;
+            }
+        }
+        img{
+            width: 16px;
+            height: 16px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+}
