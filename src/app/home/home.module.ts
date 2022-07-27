@@ -14,7 +14,7 @@ const routes: Routes = [
         SharedModule,
         CommonModule
     ],
-    exports: [RouterModule],
+    exports: [RouterModule, NewsComponent],
     declarations: [
         NewsComponent,
     ],
