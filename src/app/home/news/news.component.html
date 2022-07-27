@@ -1,0 +1,67 @@
+<section>
+  <div class="row">
+    <app-slider [dataSlider]="dataSliderNews"></app-slider>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-md-10">
+      <h1>Today's Cryptocurrency Prices by Market Cap</h1>
+      <p>
+        The global crypto market cap is <span> $1.04T</span>, a
+        <span class="down-color"> <i class="fa fa-caret-down"></i> 2.67 %</span>
+        decrease over the last day.
+        <span class="link" (click)="clickReadMore()">{{
+          readMore ? "Read Less" : "Read More"
+        }}</span>
+      </p>
+
+      <ng-container *ngIf="readMore">
+        <p class="mt-3">
+          The total crypto market volume over the last 24 hours is
+          <span> $1.04T</span>, which makes a
+          <span class="up-color"> <i class="fa fa-caret-up"></i> 11.20% </span>
+          increase. The total volume in DeFi is currently <span>$5.84B</span>,
+          <span>8.60%</span> of the total crypto market 24-hour volume. The
+          volume of all stable coins is now <span>$62.59B</span>, which is
+          <span>92.14%</span> of the total crypto market 24-hour volume.
+        </p>
+        <p class="mt-1">
+          Bitcoin's price is currently <span>$21,916.69.</span>
+        </p>
+        <p>
+          Bitcoin's dominance is currently <span>41.53%</span>, a decrease of
+          <span class="down-color">
+            <i class="fa fa-caret-down"></i> 0.03 %</span
+          >
+          over the day.
+        </p>
+      </ng-container>
+    </div>
+    <div class="col-md-2">
+      <div class="form-check form-switch form-check-reverse form-switch-md">
+        <label class="form-check-label" for="flexSwitchCheckChecked"
+          >Highlights</label
+        >
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="flexSwitchCheckChecked"
+          checked
+          (change)="changeChecked()"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row gx-1 section_widget" *ngIf="isChecked">
+    <div class="col-md-4">
+      <app-widget [dataWidget]="dataTrending"></app-widget>
+    </div>
+    <div class="col-md-4">
+      <app-widget [dataWidget]="dataAdded"></app-widget>
+    </div>
+    <div class="col-md-4">
+      <app-widget-slider [dataWidgetSlider]="dataWidgetSlider"></app-widget-slider>
+    </div>
+  </div>
+</section>

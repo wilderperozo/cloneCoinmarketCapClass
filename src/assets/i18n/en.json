@@ -1,0 +1,16 @@
+{
+    "Home": {
+        "Menu": {
+            "Cripto": "CriptoCurrencies",
+            "Tipo": "Exchanges",
+            "Com": "Comunity",
+            "Prod": "Products",
+            "Hacer": "Learn"
+        },
+        "Botones": {
+            "LogIn": "LogIn",
+            "SignUp": "Sign Up"
+        }  
+    }
+
+}

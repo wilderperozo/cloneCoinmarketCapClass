@@ -1,0 +1,15 @@
+{
+    "Home": {
+        "Menu": {
+            "Cripto": "Criptomonedas",
+            "Tipo": "Intercambios",
+            "Com": "Comunidad",
+            "Prod": "Productos",
+            "Hacer": "Aprender"
+        },
+        "Botones": {
+            "LogIn": "Iniciar Sesion",
+            "SignUp": "Registrarse"
+        }
+    }
+}

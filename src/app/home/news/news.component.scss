@@ -1,0 +1,54 @@
+@use "../../shared/styles/colors.scss";
+
+section {
+  padding: 20px 60px;
+  h1 {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 28px;
+    color: colors.$secondary-color-dark;
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+      line-height: 34px;
+    }
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 0px;
+    color: colors.$color-light-neutral;
+    font-size: 14px;
+
+    span {
+      font-weight: 600;
+      &.down-color {
+        color: colors.$down-color;
+      }
+      &.up-color {
+        color: colors.$up-color;
+      }
+      &.link {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .form-switch.form-switch-md .form-check-input {
+    height: 1.5rem;
+    width: calc(2rem + 0.75rem);
+    border-radius: 3rem;
+  }
+
+  .form-switch.form-switch-md label {
+    color: colors.$color-light-neutral;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .section_widget {
+    display: none;
+  }
+}
