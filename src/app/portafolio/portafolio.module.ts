@@ -10,7 +10,7 @@ import { Placement as PopperPlacement, Options } from '@popperjs/core';
 import { NgSelectModule } from '@ng-select/ng-select';
 
 const routes: Routes = [
-  {path: '', component: PortafolioComponent, title: 'Login super chevere'},
+  {path: '', component: PortafolioComponent, title: 'Portafolio super chevere'},
 ];
 
 @NgModule({

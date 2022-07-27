@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 import { CoinsService } from 'src/app/shared/coins.service';
+import { Coin } from 'src/app/shared/interfaces/portafolio';
 
 @Component({
   selector: 'app-portafolio',
@@ -10,18 +11,21 @@ import { CoinsService } from 'src/app/shared/coins.service';
 })
 export class PortafolioComponent implements OnInit {
   public listcoins:any = [];
-  public listcoinsFirstTen:any = [];
   public listFiltered:any = [];
   public searchTerm$= new Subject<any>();
-  chosenCoin:any;
-  chosenCoinObject:any;
+  public quantity:number= 0.00;
+  public totalSpent:number= 0;
+  public selectedCoin!:Coin;
+  public chosenCoinDiv:any;
+  public closeResult = '';
+  public errorAddTransaction:boolean =false;
+  public successfulAddTransaction:boolean =false;
+
 
   ngOnInit(): void {
     this.getTypeOfCoins();
     this.filterList();
   }
-
-  closeResult = '';
 
   constructor(private modalService: NgbModal, private coinService:CoinsService) {}
 
@@ -33,7 +37,7 @@ export class PortafolioComponent implements OnInit {
     });
   }
 
-  private getDismissReason(reason: any): string {
+  private getDismissReason = (reason: any): string => {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
@@ -43,56 +47,61 @@ export class PortafolioComponent implements OnInit {
     }
   }
 
-  public getTypeOfCoins(){
+  public getTypeOfCoins = () => {
    this.coinService.getCoins()
    .subscribe({
-    next: data => {
-    console.log(data);
-    this.listcoins=data;
-    this.listFiltered=this.listcoins;
-    },
-    error: error => {
-      console.log(JSON.stringify(error.error.message));
-    }
-  })
+      next: data => {
+      this.listcoins=data;
+      this.listFiltered=this.listcoins;
+      },
+      error: error => {
+        console.error(error);
+      }
+    })
   }
 
-  filterList(): void {
+  filterList = (): void => {
     this.searchTerm$.subscribe(term => {
-      console.log(term.value);
        this.listFiltered = this.listcoins
         .filter((item:any) => item.name.toLowerCase().indexOf(term.value.toLowerCase()) >= 0).slice(0,10);
     });
   }
 
-  addTransaction(contentTransaction:any , coin:any){
-   console.log("añadir transaccion");
-   this.modalService.open(contentTransaction, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+  addTransactionModal = (contentTransaction:any , coin:Coin): void => {
+    this.modalService.open(contentTransaction, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
     this.closeResult = `Closed with: ${result}`;
-  }, (reason) => {
+    }, (reason) => {
     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  });
-  console.log(coin)
-  this.chosenCoinObject=coin;
-  this.chosenCoin= `
-      <div style="display:flex; width:80%;">
-        <img  style="width:24px; height:24px; border-radius: 10px;" src="${coin.image}">
-        <p style="font-family: 'Rubik', sans-serif;padding:0 3px;">${coin.name.charAt(0).toUpperCase()+coin.name.slice(1,coin.name.length)}</p>
-        <p class="lettherGray" style="font-family: 'Rubik', sans-serif; color:gray;">${coin.symbol.toUpperCase()}</p>
-      </div>
-  `
+    });
+    this.selectedCoin=coin;
+    this.chosenCoinDiv= `
+    <div id="divFirstCoin">
+      <img src="${coin.image}">
+      <p id="divFirstCoinp1">${coin.name.charAt(0).toUpperCase()+coin.name.slice(1,coin.name.length)}</p>
+      <p id="divFirstCoinp2" >${coin.symbol.toUpperCase()}</p>
+    </div>
+    `
   }
 
-  addCoinNewPrice(coin:any){
-    this.chosenCoinObject=coin;
+  newSelectedValue = (coin:Coin):void => {
+    this.selectedCoin= coin;
+    this.totalSpent= coin.current_price*this.quantity;
   }
 
-  updateObjectCoin(newValue: any){
-    this.chosenCoinObject = newValue;
-    this.chosenCoin = newValue;
+  addTransaction = (coin:Coin, total:number) => {
+   if((coin.current_price === null)||(coin.current_price === 0)){
+    this.errorAddTransaction = true;
+    setTimeout(() => { this.errorAddTransaction = false; }, 1500)
+   } else if((this.quantity === null)||(this.quantity === 0)){
+    this.errorAddTransaction = true;
+    setTimeout(() => { this.errorAddTransaction = false }, 1500)
+   } else{
+    localStorage.setItem('priceTotal',`${total}`);
+    this.successfulAddTransaction=true;
+    setTimeout(() => { this.successfulAddTransaction=false,  window.location.reload() }, 1500);
+   }
+   console.log( "localStorage.getItem('price')")
+   console.log( localStorage.getItem('priceTotal'))
   }
-
-
-
 
 }
