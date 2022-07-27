@@ -25,10 +25,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.detectarRuta()
+    this.detectRoute()
   }
 
-  detectarRuta() {
+  detectRoute() {
     this.router.events.pipe(filter(event => event instanceof NavigationEnd))
       .subscribe((event: any) => {
         this.hideHeader = this.hiddenRoutes.some(ruta => event?.url == ruta)
