@@ -72,19 +72,10 @@
 }
 
 .container-search {
-    background-image: url('../../../assets/images/lupa.png');
-    opacity: 0.4;
-    background-repeat: no-repeat;
-    background-position: 4px center;
-    background-size: 20px;
-    background-color: rgb(207, 204, 204);
     display: flex;
     align-items: center;
     width: 200px;
     padding-left: 28px;
-    height: 30px;
-    border: none;
-    border-radius: 6px;
 }
 
 .container-search input {

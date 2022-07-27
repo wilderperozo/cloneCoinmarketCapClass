@@ -28,7 +28,7 @@ const routes: Routes = [
 
 
   ],
-  exports: [RouterModule],
+  exports: [RouterModule, PortafolioComponent],
   providers: [UserService, CoinsService]
 })
 export class PortafolioModule { }
