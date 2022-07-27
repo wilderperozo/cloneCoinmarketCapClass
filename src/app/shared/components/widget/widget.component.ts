@@ -12,5 +12,9 @@ export class WidgetComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  
+  clickMoreInfo(url:any){
+    window.open(url,'_blank')
+  }
 
 }

@@ -8,12 +8,14 @@ export interface ListWidgetI{
     subname:string,
     type: string, //down | up | price 
     value:string,
+    redirectTo:string
 }
 
 export interface WidgetI{
     imageWidget: string,
     nameWidget:string,
     list: ListWidgetI[],
+    urlMore:string
 }
 
 /**

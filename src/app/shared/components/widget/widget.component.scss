@@ -27,6 +27,7 @@
     }
 
     &__item{
+        cursor: pointer;
         span{
             font-size: 12px;
             &.alias{
