@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { SliderComponent } from './components/slider/slider.component';
 import { WidgetComponent } from '../shared/components/widget/widget.component';
 import { WidgetSliderComponent } from './components/widget-slider/widget-slider.component';
-import { IvyCarouselModule } from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -12,14 +11,12 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
     WidgetSliderComponent,
   ],
   imports: [
-    CommonModule,
-    IvyCarouselModule
+    CommonModule
   ],
   exports:[
     SliderComponent,
     WidgetComponent,
-    WidgetSliderComponent,
-    IvyCarouselModule
+    WidgetSliderComponent
   ]
 })
 export class SharedModule { }

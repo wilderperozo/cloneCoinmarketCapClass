@@ -1,12 +1,11 @@
-<div class="demo">
-    <carousel
-    [images]="images"
-    [height]="136"
-    [borderRadius]="10"
-    [margin]="20"
-    [loop]="true"
-    [autoplay]="true"
-    [autoplayInterval]="1000"
-    [cellsToShow]="5">
-    </carousel>
-  </div>
+
+<div class="keen-slider" #sliderRef>
+    <div class="keen-slider__slide container__slider" *ngFor="let item of dataSlider" (click)="redirectTo(item.urlRedirect)">
+        <img [src]="item.urlImage" alt="img-slider" class="img-slider">
+        <img src="assets/img/youtube.svg" class="img-play" *ngIf="item.type==='video'">
+        <div class="d-flex flex-column mt-3">
+            <span class="title" [class.title-video]="item.type==='video'">{{item.title}}</span>
+            <span class="subtitle">{{item.subTitle}}</span>
+        </div>
+    </div>
+</div>
