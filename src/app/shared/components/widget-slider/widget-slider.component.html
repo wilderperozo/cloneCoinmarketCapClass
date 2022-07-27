@@ -1,108 +1,135 @@
 <div
-  id="carouselExampleInterval"
-  class="carousel carousel-dark slide"
-  data-bs-ride="carousel"
+   id="carouselExampleInterval"
+   class="carousel carousel-dark slide"
+   data-bs-ride="carousel"
 >
-  <div class="carousel-indicators">
-    <button
-      type="button"
-      data-bs-target="#carouselExampleInterval"
-      data-bs-slide-to="0"
-      class="active"
-      aria-current="true"
-      aria-label="Slide 1"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleInterval"
-      data-bs-slide-to="1"
-      aria-label="Slide 2"
-    ></button>
-    <button
-      type="button"
-      data-bs-target="#carouselExampleInterval"
-      data-bs-slide-to="2"
-      aria-label="Slide 3"
-    ></button>
-  </div>
-  <div class="carousel-inner">
-    <div
-      class="carousel-item"
-      data-bs-interval="2000"
-      *ngFor="let item of dataWidgetSlider; let i = index; first as isFirst"
-      [ngClass]="{ active: isFirst }"
-    >
-      <div class="carousel-caption d-none d-md-block">
-        <div class="row title-widget">
-          <div class="col-md-1">
-            <img
-              *ngIf="item.urlIcon !== ''"
-              [src]="item.urlIcon"
-              width="20"
-              height="20"
-            />
-            <span *ngIf="item.urlIcon == ''">⭐️</span>
-          </div>
-          <div class="col-md-8">
-            <span class="title">{{ item.titleTop }}</span>
-          </div>
-          <div class="col-md-3 d-flex justify-content-end">
-            <span class="link">More <i class="fa fa-chevron-right"></i></span>
-          </div>
-        </div>
-
-        <ng-container *ngIf="item.type == 'community'">
-          <div class="row" *ngFor="let list of item.list">
-            <div class="col-md-1">
-              <img [src]="list.image" alt="" class="circle img-xs" />
-            </div>
-            <div
-              class="col-md-8 d-flex justify-content-start"
-              (click)="redirectTo(list.redirectTo)"
-            >
-              <p class="text-list-item">
-                {{ list.accountName }}
-                <img
-                  src="	https://s2.coinmarketcap.com/static/cloud/img/icon/certified.svg?_=e293f78"
-                />
-                <span>{{ list.accountFollow }}</span>
-              </p>
-            </div>
-            <div class="col-md-3">
-              <button type="button" class="btn btn-light">+ Follow</button>
-            </div>
-          </div>
-        </ng-container>
-
-        <ng-container *ngIf="item.type == 'post'">
-          <ng-container *ngFor="let list of item.list">
-            <div class="row">
-              <div class="col-md-1">
-                <img [src]="list.image" alt="" class="circle img-md" />
-              </div>
-              <div
-                class="col-md-8 d-flex justify-content-start"
-                (click)="redirectTo(list.redirectTo)"
-              >
-                <p class="text-list-item">
-                  {{ list.accountName }}
+   <div class="carousel-indicators">
+      <button
+         type="button"
+         data-bs-target="#carouselExampleInterval"
+         data-bs-slide-to="0"
+         class="active"
+         aria-current="true"
+         aria-label="Slide 1"
+      ></button>
+      <button
+         type="button"
+         data-bs-target="#carouselExampleInterval"
+         data-bs-slide-to="1"
+         aria-label="Slide 2"
+      ></button>
+      <button
+         type="button"
+         data-bs-target="#carouselExampleInterval"
+         data-bs-slide-to="2"
+         aria-label="Slide 3"
+      ></button>
+   </div>
+   <div class="carousel-inner">
+      <div
+         class="carousel-item"
+         data-bs-interval="2000"
+         *ngFor="let item of dataWidgetSlider; let i = index; first as isFirst"
+         [ngClass]="{ active: isFirst }"
+      >
+         <div class="carousel-caption d-none d-md-block">
+            <div class="row title-widget">
+               <div class="col-md-1">
                   <img
-                    src="	https://s2.coinmarketcap.com/static/cloud/img/icon/certified.svg?_=e293f78"
+                     *ngIf="item.urlIcon !== ''"
+                     [src]="item.urlIcon"
+                     width="20"
+                     height="20"
                   />
-                  <span>{{ list.accountFollow }}</span>
-                </p>
-              </div>
+                  <span *ngIf="item.urlIcon == ''">⭐️</span>
+               </div>
+               <div class="col-md-8">
+                  <span class="title">{{ item.titleTop }}</span>
+               </div>
+               <div class="col-md-3 d-flex justify-content-end">
+                  <span class="link"
+                     >More <i class="fa fa-chevron-right"></i
+                  ></span>
+               </div>
             </div>
-            <div class="row">
-              <div class="col-md-1"></div>
-              <div class="col-md-11 text-post">
-                <p class="row">{{ list.text1 }}</p>
-                <p class="row">{{ list.text2 }}</p>
-              </div>
-            </div>
-          </ng-container>
-        </ng-container>
+
+            <ng-container *ngIf="item.type == 'community'">
+               <div class="row" *ngFor="let list of item.list">
+                  <div class="col-md-1">
+                     <img [src]="list.image" alt="" class="circle img-xs" />
+                  </div>
+                  <div
+                     class="col-md-8 d-flex justify-content-start"
+                     (click)="redirectTo(list.redirectTo)"
+                  >
+                     <p class="text-list-item">
+                        {{ list.accountName }}
+                        <img [src]="iconVerified" />
+                        <span>{{ list.accountFollow }}</span>
+                     </p>
+                  </div>
+                  <div class="col-md-3">
+                     <button type="button" class="btn btn-light">
+                        + Follow
+                     </button>
+                  </div>
+               </div>
+            </ng-container>
+
+            <ng-container *ngIf="item.type == 'post'">
+               <ng-container *ngFor="let list of item.list">
+                  <div class="row">
+                     <div class="col-md-1">
+                        <img [src]="list.image" alt="" class="circle img-md" />
+                     </div>
+                     <div
+                        class="col-md-8 d-flex justify-content-start"
+                        (click)="redirectTo(list.redirectTo)"
+                     >
+                        <p class="text-list-item">
+                           {{ list.accountName }}
+                           <img [src]="iconVerified" />
+                           <span>{{ list.accountFollow }}</span>
+                        </p>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-1"></div>
+                     <div class="col-md-11 text-post">
+                        <p class="row">{{ list.text1 }}</p>
+                        <p class="row">{{ list.text2 }}</p>
+                     </div>
+                  </div>
+               </ng-container>
+            </ng-container>
+
+            <ng-container *ngIf="item.type == 'article'">
+               <ng-container *ngFor="let list of item.list">
+                  <div class="row">
+                     <div class="col-md-3">
+                        <img [src]="list.image" alt="" class="img-lg" />
+                     </div>
+                     <div
+                        class="col-md-9"
+                        (click)="redirectTo(list.redirectTo)"
+                     >
+                        <p class="text-list-item ft-2">
+                           {{ list.accountName }}
+                        </p>
+                        <p class="text-list-item ft-3">{{ list.text1 }}</p>
+                        <p class="social">
+                           <span>{{ list.date }}</span>
+                           <i class="fa fa-eye"></i>
+                           <span>{{ list.totalViews }}</span>
+                           <i class="fa fa-heart"></i>
+                           <span>{{ list.totalLikes }}</span>
+                        </p>
+                     </div>
+                  </div>
+               </ng-container>
+            </ng-container>
+            
+         </div>
       </div>
-    </div>
-  </div>
+   </div>
 </div>
