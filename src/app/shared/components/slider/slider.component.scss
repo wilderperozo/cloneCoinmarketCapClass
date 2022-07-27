@@ -1,0 +1,30 @@
+@use "../../../shared/styles/colors.scss";
+
+.container__slider {
+   cursor: pointer;
+  .img-slider {
+    height: 136px;
+    width: auto;
+    border-radius: 8px;
+  }
+  .img-play {
+    margin-left: 110px;
+    opacity: 0.6;
+    margin-top: -160px;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+  .title {
+    font-size: 12px;
+    color: colors.$color-light-neutral;
+  }
+  .title-video {
+    margin-top: -25px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: colors.$primary-color-dark;
+    font-weight: 500;
+  }
+}

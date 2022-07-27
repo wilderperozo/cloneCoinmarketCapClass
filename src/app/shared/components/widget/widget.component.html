@@ -1,0 +1,31 @@
+<div class="card_widget">
+  <div class="row card_widget__title">
+    <div class="col-md-1">
+      <img [src]="dataWidget?.imageWidget" alt="img_wid" />
+    </div>
+    <div class="col-md-8">
+      <span class="title">{{ dataWidget?.nameWidget }}</span>
+    </div>
+    <div class="col-md-3 d-flex justify-content-end">
+      <span class="link" (click)="clickMoreInfo(dataWidget?.urlMore)">More <i class="fa fa-chevron-right"></i></span>
+    </div>
+  </div>
+
+  <div class="row card_widget__item" *ngFor="let item of dataWidget?.list" (click)="clickMoreInfo(item.redirectTo)">
+    <div class="col-md-1">
+      <p class="rank d-flex justify-content-end">{{ item.id }}</p>
+    </div>
+    <div class="col-md-8 d-flex flex-row">
+      <img [src]="item.image" alt="icon" />
+      <p class="name">
+        {{ item.name }} <span class="alias"> {{ item.subname }}</span>
+      </p>
+    </div>
+    <div class="col-md-3 d-flex justify-content-end">
+      <span [ngClass]="item.type + '-color'">
+        <i [ngClass]="'fa fa-caret-' + item.type"></i> {{ item.value }}
+      </span>
+    </div>
+  </div>
+  
+</div>
