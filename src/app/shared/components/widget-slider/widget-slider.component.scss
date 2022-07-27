@@ -26,14 +26,19 @@
     background-color:colors.$primary-color-blue;
 }
 
-.carousel-caption{
-    padding: 0px 15px 0px 15px;
-    width: 100%;
-    margin-left: calc(-1 * 15%);
-    height: calc(100% - 30px);
-    
-    &__title{
-        height: 26px;
+.carousel-inner{
+    & .carousel-caption{
+        border:1px solid blue;
+        padding: 0px 15px 0px 15px;
+        width: 100%;
+        margin-left: calc(-1 * 15%);
+        height: calc(100% - 30px);
+        text-align: start;
+    }
+}
+
+.title-widget{
+    height: 26px;
         margin-bottom: 16px;
         span{
             font-weight:bold;
@@ -48,36 +53,34 @@
                 font-size: 12px;
             }
         }
-    }
+}
 
-    &__item{
-        img{
-            object-fit: cover;
-            border-radius: 50%;
-        }
-        .img-xs{
-            width: 26px;
-            height: 26px;
-        }
-        .img-md{
-            width: 26px;
-            height: 26px;
-        }
-        .img-lg{
-            width: 100px;
-            height: 100px;
-            border-radius: 8px;
-        }
+img{
+    object-fit: cover;
+    &.img-xs{
+        width: 26px;
+        height: 26px;
     }
-    &__post{
-        padding-left:50px;
-        text-align: left !important;
-        p{
-            color:colors.$primary-color-dark;
-            font-size: 12px;
-            margin-top: -6px;
-        }
+    &.img-md{
+        width: 26px;
+        height: 26px;
     }
+    &.img-lg{
+        width: 100px;
+        height: 100px;
+        border-radius: 8px;
+    }
+    &.circle{
+        border-radius: 50%;
+    }  
+}
+
+.btn.btn-light{
+    font-size: 12px;
+    font-weight: 600;
+    width: 100%;
+    background: colors.$color-light-neutral-3;
+    
 }
 
 .text-list-item{
@@ -98,28 +101,5 @@
         color:colors.$color-light-neutral;
         font-weight:400;
         margin-left:5px;
-    }
-}
-
-.btn.btn-light{
-    font-size: 12px;
-    font-weight: 600;
-    width: 100%;
-    background: colors.$color-light-neutral-3;
-    
-}
-
-.text-left{
-    text-align: left !important;
-    font-size: 13px;
-    margin-top: -10px;
-    & .social{
-        color:colors.$color-light-neutral;
-        i{
-            margin-left: 8px;
-        }
-        span{
-            margin-left: 8px;
-        }
     }
 }

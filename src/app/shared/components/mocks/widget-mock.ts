@@ -41,7 +41,7 @@ export const addedMock = {
       {
         id: 1,
         image: 'https://s2.coinmarketcap.com/static/img/coins/64x64/21117.png',
-        name: '四皇 - Four Emperors',
+        name: 'Four Emperors',
         subname: 'YONKŌ',
         type: 'price',
         value: '$2668.98',

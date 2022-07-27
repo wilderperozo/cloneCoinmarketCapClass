@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { WidgetI, WidgetSliderI } from 'src/app/shared/interfaces/widget';
+import { WidgetI, WidgetCardSliderI } from 'src/app/shared/interfaces/widget';
 import { trendingMock, addedMock} from '../../shared/components/mocks/widget-mock'
-import { sliderMock } from '../../shared/components/mocks/widget-post-mock'
+import { widgetSliderMock } from '../../shared/components/mocks/widget-post-mock'
 import { sliderNewsMock } from '../../shared/components/mocks/slider-news-mock'
 import { SliderI } from 'src/app/shared/interfaces/slider';
 
@@ -16,8 +16,9 @@ export class NewsComponent implements OnInit {
   checkSwitch:boolean=true;
   dataTrending: WidgetI = trendingMock;
   dataAdded: WidgetI = addedMock;
-  dataSlider: WidgetSliderI = sliderMock;
+  dataWidgetSlider: WidgetCardSliderI[]= widgetSliderMock;
   dataSliderNews: SliderI[] = sliderNewsMock;
+  
   isChecked:boolean=true;
   
   constructor() { }

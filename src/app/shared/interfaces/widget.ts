@@ -21,48 +21,24 @@ export interface WidgetI{
 /**
  * --------------Widget Slider-----------------
  */
-export interface TopPostI{
-    accountName:string,
-    accountFollow:string,
-    imagePost:string,
-    date:string,
-    totalComments:string,
-    totalLikes:string,
-    text1:string,
-    text2:string,
-    redirectTo:string,
-    titleTop:string
-}
 
-export interface  TopArticleI{
-    imageArticle:string,
-    accountName:string,
-    date:string,
-    imageAvatar:string,
-    totalViews:string,
-    totalLikes:string,
-    text:string,
-    redirectTo:string,
-    titleTop:string
-}
-
-export interface ListTopCommunityI{
+export interface WidgetSliderListI {
     id:number,
     image:string,
     accountName:string,
     accountFollow:string,
-    redirectTo:string
+    redirectTo:string,
+    date?:string,
+    totalComments?:string,
+    totalLikes?:string,
+    totalViews?:string,
+    text1?:string,
+    text2?:string,
 }
-
-export interface TopCommunityI{
+export interface WidgetCardSliderI{
     titleTop:string,
-    list: ListTopCommunityI[]|[]
-}
-
-export interface WidgetSliderI{
-    totalSliders:number,
-    contentsTopCommunity:TopCommunityI[],
-    contentsTopPost:TopPostI[],
-    contentsTopAriticle: TopArticleI[]
+    urlIcon:string,
+    type:string,
+    list: WidgetSliderListI[]
 }
 
