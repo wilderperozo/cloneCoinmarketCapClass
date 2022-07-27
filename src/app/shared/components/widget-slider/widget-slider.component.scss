@@ -91,6 +91,13 @@ img{
     &.ft-2{
         font-size: 14px;
         color: colors.$color-light-neutral;
+        margin-left: 10px;
+    }
+    &.ft-3{
+        font-size: 14px;
+        margin-left: 10px;
+        font-weight: 400;
+        margin-top: -10px;
     }
     img{
         width: 17px;
@@ -102,3 +109,26 @@ img{
         margin-left:5px;
     }
 }
+
+.text-post{
+    color:colors.$primary-color-dark;
+    font-size: 12px;
+    p{
+        margin-top: -6px;
+    }
+}
+
+
+
+.social{
+    margin-top: -10px;
+    font-size: 13px;
+    color:colors.$color-light-neutral;
+    i{
+        margin-left: 8px;
+    }
+    span{
+        margin-left: 8px;
+    }
+}
+
